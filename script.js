@@ -7,7 +7,8 @@ async function checkCertificate(codigo) {
   try {
     const response = await fetch("verificar_certificado.json");
     const certificates = await response.json();
-    const found = certificates.find((cert) => cert.hash === codigo.trim());
+    const codigoTrimmed = codigo.trim();
+    const found = certificates[codigoTrimmed];
     messageEl.innerHTML = "";
     messageEl.classList.remove("sucesso", "erro");
 
