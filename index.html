@@ -215,7 +215,26 @@
         <p>© 2025 Seu Projeto de Certificação</p>
     </footer>
     <script src="script.js"></script>
-    <script> const html = document.documentElement;
+    <script>
+        function preencherCodigoDeURL() {
+            const hash = window.location.hash.substring(1);
+            const inputCodigo = document.getElementById("codigo");
+
+            if (hash && inputCodigo) {
+                inputCodigo.value = hash;
+
+                const botaoVerificar = document.querySelector('button[type="submit"]');
+                if (botaoVerificar) {
+                    botaoVerificar.focus();
+                }
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', preencherCodigoDeURL);
+
+        window.addEventListener('hashchange', preencherCodigoDeURL);
+
+        const html = document.documentElement;
         const botaoTema = document.getElementById("botao-tema");
         function aplicarTema(tema) {
             html.setAttribute("data-tema", tema);

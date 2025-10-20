@@ -18,14 +18,7 @@ async function checkCertificate(codigo) {
     ✅ <strong>Certificado válido!</strong><br/>
     <strong>Nome:</strong> ${found.nome}<br/>
     <strong>Curso:</strong> ${found.curso}<br/>
-    <strong>Data de Emissão:</strong> ${found.data_emissao}<br/>
-    <a href="${found.link_certificado}" 
-       class="botao-download" 
-       target="_blank" 
-       rel="noopener noreferrer"
-       aria-label="Baixar certificado de ${found.nome}">
-      📄 Baixar Certificado
-    </a>
+    <strong>Data de Emissão:</strong> ${found.data_emissao}<br/>    
   `;
     } else {
       messageEl.classList.add("mensagem", "visivel", "erro");
